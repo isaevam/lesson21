@@ -4,16 +4,20 @@ function calculate (initialNumber) {
  let number=initialNumber;
 return{
   add: function(n){
-return number+n;
+  number+=n;
+return number;
 },
 subtract: function(n){
-  return number-n;
+  number-=n;
+  return number;
  },
 multiply: function(n){
-    return number*n;
+  number*=n;
+    return number;
   },
 divide: function(n){
-    return number/n;
+number/=n;
+    return number;
   },
 reset: function(){
    return  number=0;
@@ -36,7 +40,7 @@ const sum =function(num){
   return this.num + num;
 };
 const cachesDecorator = (func) => {
-  const map=new Map;
+  const map=new Map();
   return function(num){
   if (map.has(num)){
     return map.get(num);}
